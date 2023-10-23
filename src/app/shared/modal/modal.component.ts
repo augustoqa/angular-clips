@@ -9,6 +9,5 @@ import { ModalService } from '../../services/modal.service'
 export class ModalComponent {
 
   constructor(public modal: ModalService) {
-    console.log(this.modal.visible)
   }
 }
