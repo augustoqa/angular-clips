@@ -1,4 +1,9 @@
-import { Component, ContentChildren } from '@angular/core'
+import {
+  AfterContentInit,
+  Component,
+  ContentChildren,
+  QueryList,
+} from '@angular/core'
 import { TabComponent } from '../tab/tab.component'
 
 @Component({
@@ -6,8 +11,9 @@ import { TabComponent } from '../tab/tab.component'
   templateUrl: './tabs-container.component.html',
   styleUrls: ['./tabs-container.component.css'],
 })
-export class TabsContainerComponent {
-  @ContentChildren(TabComponent) tabs = {}
+export class TabsContainerComponent implements AfterContentInit {
+  @ContentChildren(TabComponent) tabs?: QueryList<TabComponent> =
+    new QueryList()
 
   ngAfterContentInit() {
     console.log(this.tabs)
