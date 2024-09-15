@@ -1,4 +1,4 @@
-<form>
+<form #loginForm="ngForm">
   <!-- Email -->
   <div class="mb-3">
     <label class="inline-block mb-2">Email</label>
@@ -26,3 +26,4 @@
     Submit
   </button>
 </form>
+<div>{{ loginForm.valid }}</div>
