@@ -2,6 +2,7 @@ import { Component } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import IUser from 'src/app/models/user.module'
 import { AuthService } from 'src/app/services/auth.service'
+import { RegisterValidators } from '../validators/register-validators'
 
 @Component({
   selector: 'app-register',
@@ -31,14 +32,17 @@ export class RegisterComponent {
     Validators.maxLength(13),
   ])
 
-  registerForm = new FormGroup({
-    name: this.name,
-    email: this.email,
-    age: this.age,
-    password: this.password,
-    confirm_password: this.confirm_password,
-    phoneNumber: this.phoneNumber,
-  })
+  registerForm = new FormGroup(
+    {
+      name: this.name,
+      email: this.email,
+      age: this.age,
+      password: this.password,
+      confirm_password: this.confirm_password,
+      phoneNumber: this.phoneNumber,
+    },
+    [RegisterValidators.match]
+  )
 
   showAlert = false
   alertMsg = 'Please wait! Your account is being created.'
