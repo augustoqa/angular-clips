@@ -26,8 +26,10 @@
             <a class="px-2" (click)="logout($event)"> Logout </a>
           </li>
         </ng-template>
-        <li>
-          <a class="px-2" routerLink="/about">About</a>
+        <li routerLinkActive="text-indigo-400">
+          <a class="px-2" routerLink="/about" routerLinkActive="text-indigo-400"
+            >About</a
+          >
         </li>
       </ul>
     </div>
